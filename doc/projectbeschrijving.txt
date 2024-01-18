@@ -1,0 +1,22 @@
+    Versies:
+Hier worden alle gebruikte tools, programmeertalen en importen die gebruikt zijn in het project. Door andere versies te gebruiken is het herhalen van resultaten niet te garanderen.
+In dit project is gebruik gemaakt van Firenze versie 1.24.3, Firenze Client versie 1.8.0 en Firenze SDK versie 1.5.0
+De scripts zijn geschreven in python 3.9 met imports en versies in BIN-3e/dep/requirements.txt. 
+
+
+    Gebruik:
+Op git staan verscheidene scripts. Deze worden hier stuk voor stuk uitgelegd zodat deze op de originele manier gebruikt kunnen worden. Voor technische uitleg van de individuele regels code en functies voor modificaties moet in de codebestanden zelf gekeken worden.
+
+    Modellen en Data:
+De dataset bestaat uit 120 kolommen met 1074 rijen die verschillende aspecten van het onderzoek beschrijven. Tijdens de voorverwerkingsfase hebben we de gegevens genormaliseerd door alle variabelen een gemiddelde van 0 en een standaarddeviatie van 1 te geven, en de gegevens gescaled door een numerieke waarde toe te kennen aan de niet-numerieke variabelen van de variabelen. Vervolgens hebben we de dataset gesplitst in een trainingsset (80% van 860 rijen), een validatieset (10% van 107 rijen) en een testset (10% van 107 rijen). Alle modellen binnen firenze, namelijk Bagging Regressor, Decision Tree Regressor, Poisson Regressor, Passive Aggressive Regressor, Multi Layer Perceptron Regressor, Adaboost Regressor, Epsilon Support Vector Regressor, Linear Regressor, Ridge Regressor Kernel Ridge Regressor en SGD Regressor, zijn getraind op de trainingsgegevens. De modellen zijn vervolgens geëvalueerd op de validatieset en testset met behulp van de evaluatiestatistieken R2, MSE, RMSE en MAE.
+
+
+    Firenze_Local_Decoder.py
+Dit script wordt gebruikt om van Firenze gedownloade modellen lokaal uit te voeren. Het komt erop neer dat modellen een lineair verband tussen het antwoord op de server en de gedownloade variant hebben zonder de Firenze API. Door een paar voorspellingen op Firenze te doen en met dezelfde parameters lokaal te voorspellen k an in theorie een formule opgesteld worden om toekomstige voorspellingen compleet lokaal uit te voeren. De nadelen zijn dat “one-hot encoding” niet gebruikt kan worden in de huidige versie omdat de preprocessor niet werkt, en de volgorde van de parameters moeilijk te bepalen is.
+In de huidige versie kan in de code een Excel bestand meegegeven worden met sheets en kollommen. Van deze komt daarna voor elke rij aan waarden een antwoord terug in de terminal. Ook kan de code informatie over het model uitprinten. Nog uit te werken in comments staan mogelijkheden om de volgorde van parameters te bepalen.
+
+    Automated_Reg.py
+Een script  om zelf met sklearn regressie modellen te trainen als in Firenze, maar in de opgeleverde staat zonder GUI, en met maar enkele modellen uitgewerkt met alle parameters. Ook mist een feature om automatisch parameters aan te passen tijdens het trainen.
+
+    14-05-2023_backward_stepwise_selectie_code.py
+Een script  om kollommen in de dataset met elkaar te vergelijken, hiervoor wordt gebruik gemaakt van lineaire regressie om verbanden te vinden tussen kollommen met datapunten. Het voordeel va dit script boven het gebruik van Firenze is dat dit script  met meer kollommen om kan gaan dan Firenze, en vele malen sneller is. Een nadeel is dat deze code geen grafieken maakt, en wat moeilijker in gebruik is. In de code kan een Excel bestand meegegeven worden met kollommen om de voorspelling over te doen. Ook kan hier de gewenste p-waarde voor de correlatie meegegeven worden.

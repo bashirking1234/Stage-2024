@@ -1,0 +1,55 @@
+Projectoverzicht:
+Probleem: De voortdurende COVID-19-pandemie vormt een complex probleem bij het voorspellen van nieuwe infecties.
+Doel: Ons doel was om machine learning modellen te gebruiken om nieuwe COVID-19 infecties in Nederland nauwkeurig te voorspellen.
+Motivatie: De motivatie achter deze studie was om bij te dragen aan effectief pandemie beheer door het voorspellen van infectietrends.
+Context: Deze studie werd uitgevoerd in het kader van de voortdurende COVID-19 pandemie met behulp van gegevens van NGO's en overheidsinstellingen.
+
+Data:
+Databronnen: We gebruikten een samengestelde dataset van COVID-19-gerelateerde gegevens, waaronder overheidsmaatregelen en niet-maatregel variabelen, verzameld uit bronnen zoals WHO, RIVM en LCP.
+Structuur: De dataset bevatte 120 kolommen en 1074 rijen.
+Verwerkingsstappen: De dataset werd schoongemaakt en voorbewerkt voordat deze werd verdeeld in een trainingsset (80%) en een testset (20%).
+Kenmerken: De kenmerken die in onze dataset waren opgenomen, varieerden van het aantal infecties, sterfgevallen en ziekenhuisopnames tot overheidsmaatregelen.
+
+Methodologie:
+Data-exploratie: We hebben in eerste instantie een verkennende gegevensanalyse uitgevoerd om de verdeling en correlatie van verschillende kenmerken te begrijpen.
+Trainings- en testsset: Onze dataset werd verdeeld in een 80-20 train-test split.
+Featureselectie: We hebben relevante kenmerken geselecteerd op basis van hun correlatie met de doelvariabele "new_cases_next_week".
+Modelselectie: We hebben geëxperimenteerd met verschillende regressiemodellen en op basis van de evaluatiematrixen hebben we de best presterende modellen geselecteerd, zoals Bagging Regressor, Poisson Regressor en Decision Tree Regressor.
+Evaluatiemethoden: We gebruikten de gemiddelde absolute fout (MAE), de gemiddelde kwadratische fout (MSE), de wortel van de gemiddelde kwadratische fout (RMSE) en de R2-score als onze belangrijkste prestatie-indicatoren.
+
+Model(len):
+Algoritme: We hebben geëxperimenteerd met verschillende algoritmen en we hebben vastgesteld dat het Bagging Regressor-algoritme een superieure voorspellende prestatie had.
+Parameters: We hebben geëxperimenteerd met verschillende hyperparameters voor elk model om de prestaties te optimaliseren.
+Configuraties: Elk model werd geconfigureerd op basis van de optimale hyperparameters die tijdens de experimentele fase zijn geïdentificeerd.
+
+Infrastructuur:
+Hardware: Standaard rekenhardware werd gebruikt voor dit project.
+Software: Het Firenze machine learning framework werd gebruikt voor modelontwikkeling en evaluatie.
+Bibliotheken, Pakketten: Standaard Python bibliotheken voor data-analyse en machine learning werden gebruikt, waaronder pandas, NumPy, scikit-learn, en matplotlib.
+Omgevingen: Het project werd ontwikkeld en uitgevoerd in een Python omgeving.
+
+Installatie en Setup:
+Dit projectrepository bevat alle nodige bestanden en instructies voor installatie en setup.
+
+Resultaten en Bevindingen:
+Onze resultaten worden gepresenteerd in een combinatie van tabellen, figuren en beschrijvende tekst. De Bagging Regressor bleek het meest effectieve model te zijn, het evenwicht tussen de onderschatting en overschatting van het aantal gevallen.
+
+Bagging Regressor: Vangt de algemene COVID-19 trend, worstelt met plotselinge stijgingen.
+Poisson Regressor: Onderschat vaak gevallen, gevoelig voor plotselinge veranderingen in gegevens, presteert ondermaats bij hoge aantallen.
+Decision Tree Regressor: Voorspellingen dicht bij de realiteit, worstelt met grotere pieken in gevallen.
+
+Toekomstig Werk:
+Toekomstig werk zou kunnen verkennen hoe het model plotselinge veranderingen in het aantal gevallen kan voorspellen en de COVID-19 maatregelen kan verbeteren.
+
+Contributors:
+Bashir Hussein :bashir.hussein@student.han.nl
+Tom van der Greft :ta.vandergreft@student.han.nl
+Zoë van den Heuvel : z.vandenheuvel1@student.han.nl
+Guus van Bentem : guus.vanbentum@han.nl
+
+References:
+COVID-19 dataset. (2023). Retrieved from RIVM: https://www.rivm.nl/coronavirus-covid-19/rekenmodellen/openbaar-en-toegankelijk
+Data on the daily number of new reported COVID-19 cases and deaths by EU/EEA country. (2022, 10 27). Retrieved from ECDC: https://www.ecdc.europa.eu/en/publicationsdata/data-daily-new-cases-covid-19-eueea-country
+FIrenze, (2018). Vartion B.V. Retrieved from:https://firenze.biocentre.nl
+Datafeed - LCPS. (2023, 24 april). LCPS. https://lcps.nu/datafeed/
+
